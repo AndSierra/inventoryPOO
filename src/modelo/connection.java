@@ -10,7 +10,7 @@ public class connection {
     public static Connection getconnection(){
         
         String url = "jdbc:sqlserver://localhost:1433;"
-                + "database = master;"
+                + "database = inventarioPOO;"
                 + "user = and;"
                 + "password = 12345;";
         
