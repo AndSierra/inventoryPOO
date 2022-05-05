@@ -153,10 +153,12 @@ public class RegistroUsuarios extends javax.swing.JInternalFrame {
         });
 
         bgroupRol.add(rbAdmin);
+        rbAdmin.setForeground(new java.awt.Color(255, 255, 255));
         rbAdmin.setText("Administrador");
         rbAdmin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         bgroupRol.add(rbUsuario);
+        rbUsuario.setForeground(new java.awt.Color(255, 255, 255));
         rbUsuario.setText("Usuario");
         rbUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -379,7 +381,7 @@ public class RegistroUsuarios extends javax.swing.JInternalFrame {
             PreparedStatement ps;
             
             Connection con = connection.getconnection();
-            ps = con.prepareStatement("SELECT nombre,apellido,cc,rol FROM estudiantes WHERE id = ?");
+            ps = con.prepareStatement("SELECT nombre,apellido,cc,rol FROM usuarios WHERE id = ?");
             ps.setInt(1, id);
             rs = ps.executeQuery();
 
