@@ -335,13 +335,14 @@ public class RegistroUsuarios extends javax.swing.JInternalFrame {
 //            mostrar();
         try {
             Connection con = connection.getconnection();
-            PreparedStatement ps = con.prepareStatement("INSERT INTO usuarios (nombre,apellido,cc,usuario, contraseña, rol) VALUES (?,?,?,?,?)");
+            PreparedStatement ps = con.prepareStatement("INSERT INTO usuarios (nombre,apellido,cc,usuario, contraseña, rol) VALUES (?,?,?,?,?,?)");
 
             ps.setString(1, usuario.getNombre());
             ps.setString(2, usuario.getApellido());
             ps.setInt(3, usuario.getCC());
             ps.setString(4, usuario.getUsuario());
             ps.setInt(5, usuario.getContraseña());
+            ps.setInt(6, usuario.getRol());
             ps.executeUpdate();
 
             JOptionPane.showMessageDialog(null, "Registro guardado exitosamente");
@@ -407,7 +408,8 @@ public class RegistroUsuarios extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jTablaMouseClicked
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-         int cedula = Integer.parseInt(txtApellido.getText());
+         getRol();
+        int cedula = Integer.parseInt(txtCc.getText());
          int id = Integer.parseInt(txtId.getText());
         Usuario usuario = new Usuario(txtNombre.getText(),txtApellido.getText(), cedula, rol );
         lista.add(usuario);
@@ -415,7 +417,7 @@ public class RegistroUsuarios extends javax.swing.JInternalFrame {
         try {
             Connection con = connection.getconnection();
             PreparedStatement ps = con.prepareStatement("UPDATE usuarios SET nombre=?,apellido=?,cc=?,usuario=?,contraseña=?,rol=? WHERE id = ?");
-
+            
             ps.setString(1, usuario.getNombre());
             ps.setString(2, usuario.getApellido());
             ps.setInt(3, usuario.getCC());
