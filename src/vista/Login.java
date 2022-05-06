@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import modelo.connection;
+import vista.Menu;
 
 /**
  *
@@ -20,22 +21,22 @@ import modelo.connection;
  */
 public class Login extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Login
-     */
+
+     
+
     public Login() {
         initComponents();
     }
     
   public int Login(String User, String Pass){
         int resultado = 0;
-
+        
         try{
             Connection con = connection.getconnection();
             Statement ejecutor = con.createStatement();
             
             ResultSet rs = ejecutor.executeQuery("SELECT * FROM usuarios WHERE usuario = '"+User+"' AND contraseña = '"+Pass+"'");
-            
+
             if(rs.next()) {
                 resultado = 1;
             }else{
@@ -173,10 +174,27 @@ public class Login extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//    private int getRol(String User, String Pass){
+//        int rolUser = 0;
+//
+//        try {
+//            ResultSet rs;
+//            Connection con = connection.getconnection();
+//            Statement ejecutor = con.createStatement();
+//
+//            rs = ejecutor.executeQuery("SELECT rol FROM usuarios WHERE usuario = '" + User + "' AND contraseña = '" + Pass + "'");
+//
+//            rs.next();
+//            rolUser = rs.getInt("rol");
+//
+//        } catch (SQLException e) {
+//            JOptionPane.showMessageDialog(null, "Error al atrapar el usuario" + e.toString());
+//        }
+//        return rolUser;
+//    }
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         int islogeado = Login(txtUsuario.getText(),getContraseña()); 
-
+        
         if (islogeado == 1) {
 
             JOptionPane.showMessageDialog(null, "Bienvenido de nuevo " + txtUsuario.getText());
@@ -187,13 +205,17 @@ public class Login extends javax.swing.JInternalFrame {
             Dimension desktopSize = Inicio.jDesktopPrincipal.getSize();
             Dimension FrameSize = menu.getSize();
             menu.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+//            rolUser = getRol(txtUsuario.getText(),getContraseña());
+//            System.out.println("Login" + getRol(txtUsuario.getText(),getContraseña()));
+            menu.rol = menu.getRol(txtUsuario.getText(),getContraseña());
             menu.show();
+
                 
         }else if(islogeado == 0){
                 JOptionPane.showMessageDialog(null, "Contraseño o usuario incorrecto");
         }
     }//GEN-LAST:event_btnInicioActionPerformed
-    
+  
     private String getContraseña(){
         String pass = ""; 
         char [] password = txtContraseña.getPassword();

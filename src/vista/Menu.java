@@ -2,17 +2,26 @@
 package vista;
 
 import java.awt.Dimension;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import modelo.connection;
+import vista.Login;
 
 public final class Menu extends javax.swing.JInternalFrame {
-
+    
     Dimension desktopSize = Inicio.jDesktopPrincipal.getSize();
+    int rol = 0;
     public Menu() {
-        initComponents();
-        Estilos();
-        
-    }
 
+        initComponents();
+        setRol(rol);
+        System.out.println(rol);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -164,6 +173,35 @@ public final class Menu extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
     public void Estilos(){
        lblImagen.setIcon(new ImageIcon("pngwing.com.png"));
+    }
+    
+    public int getRol(String User, String Pass){
+        int rolUser = 0;
+
+        try {
+            ResultSet rs;
+            Connection con = connection.getconnection();
+            Statement ejecutor = con.createStatement();
+
+            rs = ejecutor.executeQuery("SELECT rol FROM usuarios WHERE usuario = '" + User + "' AND contraseña = '" + Pass + "'");
+
+            rs.next();
+            rolUser = rs.getInt("rol");
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al atrapar el usuario" + e.toString());
+        }
+        return rolUser;
+    }
+    
+    public void setRol(int rol){
+        if (rol == 1) {
+            btnAdministrarU.setVisible(true);
+        }else{
+            if(rol == 2){
+                btnAdministrarU.setVisible(false);
+            }
+        }
     }
     private void btnRegistrarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarPActionPerformed
         // TODO add your handling code here:

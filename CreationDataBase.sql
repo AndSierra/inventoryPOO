@@ -18,6 +18,6 @@ CREATE TABLE usuarios (
 
 SELECT * FROM usuarios
 
-SELECT * FROM usuarios WHERE usuario = 'ands' AND contraseña = '123'
+SELECT rol FROM usuarios WHERE usuario = 'ands' AND contraseña = '123'
 
 DROP table usuarios
