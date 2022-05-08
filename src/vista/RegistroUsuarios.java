@@ -413,7 +413,7 @@ public class RegistroUsuarios extends javax.swing.JInternalFrame {
          int id = Integer.parseInt(txtId.getText());
         Usuario usuario = new Usuario(txtNombre.getText(),txtApellido.getText(), cedula, rol );
         lista.add(usuario);
-//            mostrar();
+
         try {
             Connection con = connection.getconnection();
             PreparedStatement ps = con.prepareStatement("UPDATE usuarios SET nombre=?,apellido=?,cc=?,usuario=?,contraseña=?,rol=? WHERE id = ?");

@@ -41,7 +41,7 @@ public final class Menu extends javax.swing.JInternalFrame {
         lblImagen = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btnRegistrarP = new javax.swing.JButton();
-        btnActualizarP = new javax.swing.JButton();
+        btnInventario = new javax.swing.JButton();
         btnBuscarP = new javax.swing.JButton();
         btnAdministrarU = new javax.swing.JButton();
 
@@ -80,11 +80,11 @@ public final class Menu extends javax.swing.JInternalFrame {
             }
         });
 
-        btnActualizarP.setBackground(new java.awt.Color(211, 63, 73));
-        btnActualizarP.setText("Actualizar Pelicula");
-        btnActualizarP.addActionListener(new java.awt.event.ActionListener() {
+        btnInventario.setBackground(new java.awt.Color(211, 63, 73));
+        btnInventario.setText("Inventario");
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarPActionPerformed(evt);
+                btnInventarioActionPerformed(evt);
             }
         });
 
@@ -117,8 +117,10 @@ public final class Menu extends javax.swing.JInternalFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(btnBuscarP))
-                    .addComponent(btnActualizarP)
-                    .addComponent(btnAdministrarU))
+                    .addComponent(btnAdministrarU)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnInventario)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -127,10 +129,10 @@ public final class Menu extends javax.swing.JInternalFrame {
                 .addGap(64, 64, 64)
                 .addComponent(btnRegistrarP)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnActualizarP)
+                .addComponent(btnInventario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBuscarP)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 95, Short.MAX_VALUE)
                 .addComponent(btnAdministrarU)
                 .addGap(31, 31, 31))
         );
@@ -204,15 +206,27 @@ public final class Menu extends javax.swing.JInternalFrame {
         }
     }
     private void btnRegistrarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarPActionPerformed
-        // TODO add your handling code here:
+        NuevaPelicula nP = new NuevaPelicula();
+        Inicio.jDesktopPrincipal.add(nP);
+        Dimension FrameSize = nP.getSize();
+        nP.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        nP.show();
     }//GEN-LAST:event_btnRegistrarPActionPerformed
 
-    private void btnActualizarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarPActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnActualizarPActionPerformed
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
+        Inventario iP = new Inventario();
+        Inicio.jDesktopPrincipal.add(iP);
+        Dimension FrameSize = iP.getSize();
+        iP.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+        iP.show();
+    }//GEN-LAST:event_btnInventarioActionPerformed
 
     private void btnBuscarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarPActionPerformed
-        // TODO add your handling code here:
+//        RegistroUsuarios rU = new RegistroUsuarios();
+//        Inicio.jDesktopPrincipal.add(rU);
+//        Dimension FrameSize = rU.getSize();
+//        rU.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+//        rU.show();
     }//GEN-LAST:event_btnBuscarPActionPerformed
 
     private void btnAdministrarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministrarUActionPerformed
@@ -225,9 +239,9 @@ public final class Menu extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnActualizarP;
     private javax.swing.JButton btnAdministrarU;
     private javax.swing.JButton btnBuscarP;
+    private javax.swing.JButton btnInventario;
     private javax.swing.JButton btnRegistrarP;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JMenu jMenu1;

@@ -21,3 +21,23 @@ SELECT * FROM usuarios
 SELECT rol FROM usuarios WHERE usuario = 'ands' AND contraseña = '123'
 
 DROP table usuarios
+
+CREATE TABLE peliculas (
+ id_pelicula int IDENTITY(1,1) NOT NULL PRIMARY KEY,
+ nombrePelicula nvarchar(100) NOT NULL,
+ formato nvarchar(50) NOT NULL,
+ stock int NOT NULL,
+ director nvarchar(100) NOT NULL,
+ precio int NOT NULL,
+ año int NOT NULL,
+ categoria nvarchar(50)NOT NULL
+ )
+
+ INSERT INTO peliculas (nombrePelicula,formato,stock,director,precio,año,categoria)
+ VALUES ('Doctor Strange en el Multiverso de la Locura','DVD',20,'San Raimi',20000,2022,'Accion'),
+		('El codigo enigma','BLURAY',50,'Morten Tyldum',30000,2014,'Drama'),
+		('¿Y dónde están las rubias?','DVD',8,'Keenen Ivory Wayans',15000,2004,'Comedia')
+
+SELECT * FROM peliculas
+
+DROP table peliculas
