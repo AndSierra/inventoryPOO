@@ -137,8 +137,11 @@
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                               <Component id="btnBuscarP" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="btnActualizarP" min="-2" max="-2" attributes="0"/>
                           <Component id="btnAdministrarU" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="btnInventario" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -150,10 +153,10 @@
                       <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="btnRegistrarP" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnActualizarP" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnInventario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btnBuscarP" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="91" max="32767" attributes="0"/>
+                      <EmptySpace pref="95" max="32767" attributes="0"/>
                       <Component id="btnAdministrarU" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   </Group>
@@ -172,15 +175,15 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistrarPActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btnActualizarP">
+            <Component class="javax.swing.JButton" name="btnInventario">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="49" green="3f" red="d3" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Actualizar Pelicula"/>
+                <Property name="text" type="java.lang.String" value="Inventario"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnActualizarPActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInventarioActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnBuscarP">

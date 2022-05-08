@@ -60,11 +60,11 @@ public class Inicio extends javax.swing.JFrame {
         jDesktopPrincipal.setLayout(jDesktopPrincipalLayout);
         jDesktopPrincipalLayout.setHorizontalGroup(
             jDesktopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 858, Short.MAX_VALUE)
+            .addGap(0, 957, Short.MAX_VALUE)
         );
         jDesktopPrincipalLayout.setVerticalGroup(
             jDesktopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 482, Short.MAX_VALUE)
+            .addGap(0, 558, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
